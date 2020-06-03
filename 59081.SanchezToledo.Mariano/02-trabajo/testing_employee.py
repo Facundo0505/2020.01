@@ -12,11 +12,11 @@ class Test_Employee (unittest.TestCase):
         employee = Employee("Claudio", 22, 20000).get_employee()
         self.assertEqual(employee, ["Claudio", 22, 20000])
 
-    def test_get_employee (self):
+    def test_get_employee_two (self):
         employee = Employee("Claudio", 22, 20000).pay_tax()
         self.assertEqual(employee, "No paga impuestos")
 
-    def test_get_employee (self):
+    def test_get_employee_three (self):
         employee = Employee("Juan", 30, 40000).pay_tax()
         self.assertEqual(employee, "Paga impuestos")
 

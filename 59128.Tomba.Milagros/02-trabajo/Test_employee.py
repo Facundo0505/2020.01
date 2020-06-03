@@ -1,6 +1,6 @@
 import unittest
-from Employee import Person
-from Employee import Employee
+from Employeee import Person
+from Employeee import Employee
 
 class Test_person(unittest.TestCase):
     def test_get_person(self):
@@ -17,7 +17,7 @@ class  Test_employee(unittest.TestCase):
         self.assertEqual(taxes, "Paga impuestos")
 
     def Test_pay_tax_no_pay(self):
-        taxes2 = Employee("Milagros", 19, 30000).pay_tax()
+        taxes2 = Employee("Milagros", 19, 30000,"Tomba").pay_tax()
         self.assertEqual(taxes2, "No paga impuestos")
     
        

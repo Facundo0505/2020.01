@@ -9,6 +9,7 @@ class Person:
 
 class Employee(Person):
     def __init__(self, name, age, salary):
+        Person.__init__(self, name, age)
         self.salary = salary
 
     def get_employee(self):
@@ -16,6 +17,6 @@ class Employee(Person):
 
     def pay_tax(self):
         if self.salary > 30000 and self.age < 32:
-            return "paga impuesto"
+            return "Paga impuestos"
         else:
-            return "no paga impuesto"
+            return "No paga impuestos"

@@ -1,23 +1,24 @@
 # declaramos la clase persona
 class Person:
     # declaramos el metodo __init__ 
-    def __init__(self, name, age):
+    def __init__(self, name, age, apellido, telefono):
         self.name=name
         self.age=age
- 
+        self.apellido=apellido
+        self.telefono=telefono 
     #Devuelve una lista con el nombre y la edad
     #return ["Claudio", 32]
     def get_person(self):
-       return [self.name, self.age]
- 
+        Person = {'name':self.name, 'age':self.age, 'apellido':self.apellido, 'telefono':self.telefono}
+        return Person
  
 # declaramos la clase Employee
 # la clase empleado hereda los atributos y metodos de la clase Persona
 class Employee(Person):
     # declaramos el metodo __init__ para Employee
-    def __init__(self, name, age, salary):
+    def __init__(self, name, age, apellido, telefono, salary):
         # llamamos al metodo init de la clase padre
-        Person.__init__(self, name, age)
+        Person.__init__(self, name, age, apellido,telefono)
         #ingresamos salary para employee
         self.salary=salary 
 
@@ -25,7 +26,8 @@ class Employee(Person):
     #Devuelve una lista con los atributos
     #return ["Claudio", 32, 30000]
     def get_employee(self):
-       return [self.name, self.age, self.salary]
+        
+       return [self.name, self.age, self.apellido, self.telefono, self.salary]
 
     # declaramos el metodo pagar_impuestos
     # comprobara si el empleado debe pagar o no
@@ -35,4 +37,10 @@ class Employee(Person):
             return "Paga impuestos"
         else:
             return "No paga impuestos"
- 
+
+    if __name__ == "__main__":
+        p = Person("Marcelino", 25 , "Caballero", 498284154678)   
+        persondic = p.get_person
+        print(p.get_person())
+    
+       
